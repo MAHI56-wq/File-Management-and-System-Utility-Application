@@ -3,13 +3,13 @@
 #include <iostream>
 #include <sstream>
 
-// Constructor
+
 UserManager::UserManager(const std::string& fileName) {
     dataFile = fileName;
     loadUsers();
 }
 
-// ফাইল থেকে ইউজার লোড
+
 void UserManager::loadUsers() {
     std::ifstream inFile(dataFile);
     if(!inFile) return;
@@ -25,7 +25,7 @@ void UserManager::loadUsers() {
     inFile.close();
 }
 
-// ফাইল এ ইউজার সেভ
+
 void UserManager::saveUsers() {
     std::ofstream outFile(dataFile);
     for(const auto& pair : users) {
@@ -34,7 +34,7 @@ void UserManager::saveUsers() {
     outFile.close();
 }
 
-// রেজিস্টার ইউজার
+
 bool UserManager::registerUser(const std::string& username, const std::string& password) {
     if(users.find(username) != users.end()) {
         std::cout << "Username already exists!\n";
@@ -46,7 +46,7 @@ bool UserManager::registerUser(const std::string& username, const std::string& p
     return true;
 }
 
-// লগইন ইউজার
+
 bool UserManager::loginUser(const std::string& username, const std::string& password) {
     auto it = users.find(username);
     if(it != users.end() && it->second == password) {
@@ -56,3 +56,4 @@ bool UserManager::loginUser(const std::string& username, const std::string& pass
     std::cout << "Invalid username or password!\n";
     return false;
 }
+
