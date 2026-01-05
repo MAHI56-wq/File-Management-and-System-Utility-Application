@@ -6,16 +6,17 @@
 
 class UserManager {
 private:
-    std::unordered_map<std::string, std::string> users; // username -> password mapping
-    std::string dataFile; // ইউজার ডেটা স্টোর করার ফাইল
+    std::unordered_map<std::string, std::string> users; 
+    std::string dataFile; 
 
-    void loadUsers(); // ফাইল থেকে ইউজার লোড
-    void saveUsers(); // ফাইল এ ইউজার সেভ
+    void loadUsers(); 
+    void saveUsers(); 
 
 public:
-    UserManager(const std::string& fileName); // Constructor
-    bool registerUser(const std::string& username, const std::string& password); // রেজিস্টার
-    bool loginUser(const std::string& username, const std::string& password); // লগইন
+    UserManager(const std::string& fileName); 
+    bool registerUser(const std::string& username, const std::string& password); 
+    bool loginUser(const std::string& username, const std::string& password); 
 };
 
 #endif
+
