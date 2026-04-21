@@ -5,21 +5,16 @@
 #include <vector>
 
 struct Version {
-    std::string fileName;
-    int versionNumber;
-    std::string timestamp;
+    std::string file;
+    int version;
+    std::string backupPath;
 };
 
 class VersionManager {
-private:
-    std::string versionFolder;
-    std::vector<Version> versions;
-
 public:
-    VersionManager(const std::string& folder);
-    void saveVersion(const std::string& fileName);
-    void listVersions(const std::string& fileName) const;
-    void restoreVersion(const std::string& fileName, int versionNumber);
+    void saveVersion(const std::string& file);
+    void listVersions(const std::string& file);
+    bool restoreVersion(const std::string& file, int v);
 };
 
-#endif 
+#endif
